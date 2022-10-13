@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {SebComponent} from "../Components/SebComponent/SebComponent"
 
 export default {
@@ -7,8 +7,9 @@ export default {
 }
 
 export const SebbieTest = () => {
+  const [sebState, setSebstate] = useState();
 
   return(
-   <SebComponent name={'borat111!'}/>
+   <SebComponent name={'seb'}/>
   )
 }

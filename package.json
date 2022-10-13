@@ -1,6 +1,6 @@
 {
   "name": "seb-storybook-test",
-  "version": "1.0.54",
+  "version": "1.0.55",
   "description": "just playing around",
   "main": "SebComponents.js",
   "scripts": {
