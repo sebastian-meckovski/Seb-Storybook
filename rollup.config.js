@@ -6,10 +6,10 @@ import { terser } from "rollup-plugin-terser";
 
 export default [
   {
-    input: "./src/index",
+    input: "./SebComponents",
     output: [
       {
-        file: "dist/index.js",
+        file: "dist/SebComponents.js",
         format: "cjs",
       },
     ],
