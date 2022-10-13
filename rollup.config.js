@@ -12,15 +12,10 @@ export default [
         file: "dist/index.js",
         format: "cjs",
       },
-      // {
-      //   file: "dist/index.es.js",
-      //   format: "es",
-      //   exports: "named",
-      // },
     ],
     plugins: [
       scss({
-        insert: true
+        insert: true,
       }),
       babel({
         exclude: "node_modules/**",
@@ -28,27 +23,7 @@ export default [
       }),
       external(),
       resolve(),
-      terser()
-    ],
-  },
-  {
-    input: "./src/index1",
-    output: [
-      {
-        file: "dist/another thing/sebComponent2.js",
-        format: "cjs",
-      }
-    ],
-    plugins: [
-      scss({
-        insert: true
-      }),
-      babel({
-        exclude: "node_modules/**",
-        presets: ["@babel/preset-react"],
-      }),
-      external(),
-      resolve(),
+      terser(),
     ],
   },
 ];
