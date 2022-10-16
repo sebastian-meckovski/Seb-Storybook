@@ -14,7 +14,7 @@
   },
   "author": "Sebastian Meckovski",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.19.3",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@storybook/addon-actions": "^6.5.12",
@@ -29,7 +29,7 @@
     "postcss": "^8.4.17",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^3.1.0",
+    "rollup": "^2.78.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -42,5 +42,9 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12"
   }
 }
