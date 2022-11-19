@@ -13,13 +13,13 @@ export const BezierDrawer = () => {
 		var circle1 = {
 			x: width * 0.1,
 			y: height * 0.2,
-			radius: 20,
+			radius: 10,
 		};
 
 		var circle2 = {
 			x: width * 0.3,
 			y: height * 0.5,
-			radius: 20,
+			radius: 10,
 		};
 
 		function draw() {
@@ -54,7 +54,7 @@ export const BezierDrawer = () => {
 		}
 
 		function circlePointCollision(x, y, circle) {
-			return distanceXY(x, y, circle.x, circle.y) < circle.radius;
+			return distanceXY(x, y, circle.x, circle.y) < circle.radius + 20;
 		}
 
 		function distanceXY(x0, y0, x1, y1) {
@@ -68,10 +68,14 @@ export const BezierDrawer = () => {
 				document.addEventListener('mousemove', onMouseMove);
 				document.addEventListener('mouseup', onMouseUp);
 			}
+			if (circlePointCollision(e.x, e.y, circle2)) {
+				document.addEventListener('mousemove', onMouseMove2);
+				document.addEventListener('mouseup', onMouseUp);
+			}
 		});
 
 		function onMouseMove(e) {
-			const threshold = circle1.radius;  
+			const threshold1 = circle1.radius * 3;  
 
 			var myArrayX = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9];
 			var myArrayY = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9];
@@ -84,7 +88,7 @@ export const BezierDrawer = () => {
 			});
 
 			intersections.forEach((item) => {
-				if (distanceXY(e.pageX, e.pageY, item.x, item.y) < threshold) {
+				if (distanceXY(e.pageX, e.pageY, item.x, item.y) < threshold1) {
 					circle1.x = item.x;
 					circle1.y = item.y;
 				}
@@ -93,8 +97,32 @@ export const BezierDrawer = () => {
 			draw();
 		}
 
+		function onMouseMove2(e) {
+			const threshold2 = circle2.radius * 3;  
+
+			var myArrayX = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9];
+			var myArrayY = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9];
+			var intersections = [];
+
+			myArrayX.forEach((x) => {
+				myArrayY.forEach((y) => {
+					intersections.push({ x: width * x, y: height * y });
+				});
+			});
+
+			intersections.forEach((item) => {
+				if (distanceXY(e.pageX, e.pageY, item.x, item.y) < threshold2) {
+					circle2.x = item.x;
+					circle2.y = item.y;
+				}
+			});
+			
+			draw();
+		}
+
 		function onMouseUp() {
 			document.removeEventListener('mousemove', onMouseMove);
+			document.removeEventListener('mousemove', onMouseMove2);
 			document.removeEventListener('mouseup', onMouseUp);
 		}
 		draw();
