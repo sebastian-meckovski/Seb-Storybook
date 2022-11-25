@@ -1,14 +1,25 @@
-// import './BezierDrawer.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import './BezierDrawer.scss'
 
-export const BezierDrawer = () => {
+export const BezierDrawer = ({ onCoordUpdate }) => {
 	const canvasRef = useRef(null);
+
+	const canvasSize = 600;
+	
+	const [coords, setCoords] = useState([
+		{ x: canvasSize * 0.1, y: canvasSize * 0.2 },
+		{ x: canvasSize * 0.3, y: canvasSize * 0.5 },
+	]);
+
+	useEffect(() => {
+		onCoordUpdate && onCoordUpdate(coords);
+	}, [coords]);
 
 	useEffect(() => {
 		var canvas = canvasRef.current;
 		var ctx = canvas.getContext('2d');
-		var width = (canvas.width = window.innerWidth * 0.9);
-		var height = (canvas.height = window.innerHeight * 0.9);
+		var width = (canvas.width = canvasSize);
+		var height = (canvas.height = canvasSize);
 
 		var circle1 = {
 			x: width * 0.1,
@@ -38,9 +49,11 @@ export const BezierDrawer = () => {
 		}
 
 		function drawVerticalLines() {
-			var myArray = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+			var myArray = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1];
 
 			myArray.forEach((x) => {
+				ctx.lineWidth = 2;
+
 				ctx.beginPath();
 				ctx.moveTo(width * x, 0);
 				ctx.lineTo(width * x, height);
@@ -75,7 +88,7 @@ export const BezierDrawer = () => {
 		});
 
 		function onMouseMove(e) {
-			const threshold1 = circle1.radius * 3;  
+			const threshold1 = circle1.radius * 3;
 
 			var myArrayX = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9];
 			var myArrayY = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9];
@@ -88,17 +101,21 @@ export const BezierDrawer = () => {
 			});
 
 			intersections.forEach((item) => {
-				if (distanceXY(e.pageX, e.pageY, item.x, item.y) < threshold1) {
+				if (distanceXY(e.pageX, e.pageY, item.x, item.y) < threshold1 && (item.x !== circle2.x || item.y !== circle2.y)) {
 					circle1.x = item.x;
 					circle1.y = item.y;
+					setCoords([
+						{ x: circle1.x, y: circle1.y },
+						{ x: circle2.x, y: circle2.y },
+					]);
 				}
 			});
-			
+
 			draw();
 		}
 
 		function onMouseMove2(e) {
-			const threshold2 = circle2.radius * 3;  
+			const threshold2 = circle2.radius * 3;
 
 			var myArrayX = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9];
 			var myArrayY = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9];
@@ -111,12 +128,17 @@ export const BezierDrawer = () => {
 			});
 
 			intersections.forEach((item) => {
-				if (distanceXY(e.pageX, e.pageY, item.x, item.y) < threshold2) {
+				if (distanceXY(e.pageX, e.pageY, item.x, item.y) < threshold2 && (item.x !== circle1.x || item.y !== circle1.y)) {
 					circle2.x = item.x;
 					circle2.y = item.y;
+
+					setCoords([
+						{ x: circle1.x, y: circle1.y },
+						{ x: circle2.x, y: circle2.y },
+					]);
 				}
 			});
-			
+
 			draw();
 		}
 
@@ -129,5 +151,9 @@ export const BezierDrawer = () => {
 		drawVerticalLines();
 	}, []);
 
-	return <canvas ref={canvasRef} id={'bezierDrawer'} />;
-}
+	return (
+		<>
+			<canvas ref={canvasRef} id={'bezierDrawer'} />
+		</>
+	);
+};
