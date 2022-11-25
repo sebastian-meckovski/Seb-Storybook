@@ -7,5 +7,8 @@ export default {
 };
 
 export const BezierDrawerExample = () => {
-	return <BezierDrawer onCoordUpdate={(x) => console.table(x)} />;
+	return <BezierDrawer onCoordUpdate={(x) => {
+    console.clear()
+    console.table(x)
+  }} />;
 };

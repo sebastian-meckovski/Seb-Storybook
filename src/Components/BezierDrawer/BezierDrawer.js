@@ -35,6 +35,8 @@ export const BezierDrawer = ({ onCoordUpdate }) => {
 
 		function draw() {
 			ctx.clearRect(0, 0, width, height);
+			ctx.lineWidth = 7;
+
 
 			ctx.beginPath();
 			ctx.arc(circle1.x, circle1.y, circle1.radius, 0, Math.PI * 2, false);
@@ -43,6 +45,11 @@ export const BezierDrawer = ({ onCoordUpdate }) => {
 			ctx.beginPath();
 			ctx.arc(circle2.x, circle2.y, circle2.radius, 0, Math.PI * 2, false);
 			ctx.fill();
+
+			ctx.beginPath();
+
+			ctx.moveTo(60, 0);
+			ctx.quadraticCurveTo(circle1.x, circle1.y, circle2.x, circle2.y)
 
 			ctx.stroke();
 			drawVerticalLines();
