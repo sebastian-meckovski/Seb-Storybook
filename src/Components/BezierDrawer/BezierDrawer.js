@@ -49,7 +49,9 @@ export const BezierDrawer = ({ onCoordUpdate }) => {
 			ctx.beginPath();
 
 			ctx.moveTo(60, 0);
-			ctx.quadraticCurveTo(circle1.x, circle1.y, circle2.x, circle2.y)
+			// ctx.quadraticCurveTo(circle1.x, circle1.y, circle2.x, circle2.y)
+			ctx.lineTo(circle1.x, circle1.y)
+			ctx.lineTo(circle2.x, circle2.y)
 
 			ctx.stroke();
 			drawVerticalLines();

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BezierDrawer } from '../Components/BezierDrawer/BezierDrawer';
 
 export default {
@@ -7,8 +7,16 @@ export default {
 };
 
 export const BezierDrawerExample = () => {
-	return <BezierDrawer onCoordUpdate={(x) => {
-    console.clear()
-    console.table(x)
-  }} />;
+	const [coords, setCoords] = useState();
+
+	const onCoordUpdate = (e) => {
+		setCoords(e);
+	};
+
+	return (
+		<>
+			<BezierDrawer onCoordUpdate={onCoordUpdate} />
+      <pre>{JSON.stringify(coords, 0, 2)}</pre> 
+		</>
+	);
 };
