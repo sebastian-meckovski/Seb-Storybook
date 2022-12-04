@@ -85,14 +85,17 @@ export const BezierDrawer = ({ onCoordUpdate }) => {
 			return Math.sqrt(dx * dx + dy * dy);
 		}
 
-		document.addEventListener('mousedown', function (e) {
-			if (circlePointCollision(e.x, e.y, circle1)) {
-				document.addEventListener('mousemove', onMouseMove);
-				document.addEventListener('mouseup', onMouseUp);
+		canvas.addEventListener('mousedown', function (e) {
+			
+
+			console.log(e)
+			if (circlePointCollision(e.offsetX, e.offsetY, circle1)) {
+				canvas.addEventListener('mousemove', onMouseMove);
+				canvas.addEventListener('mouseup', onMouseUp);
 			}
-			if (circlePointCollision(e.x, e.y, circle2)) {
-				document.addEventListener('mousemove', onMouseMove2);
-				document.addEventListener('mouseup', onMouseUp);
+			if (circlePointCollision(e.offsetX, e.offsetY, circle2)) {
+				canvas.addEventListener('mousemove', onMouseMove2);
+				canvas.addEventListener('mouseup', onMouseUp);
 			}
 		});
 
@@ -110,7 +113,7 @@ export const BezierDrawer = ({ onCoordUpdate }) => {
 			});
 
 			intersections.forEach((item) => {
-				if (distanceXY(e.pageX, e.pageY, item.x, item.y) < threshold1 && (item.x !== circle2.x || item.y !== circle2.y)) {
+				if (distanceXY(e.offsetX, e.offsetY, item.x, item.y) < threshold1 && (item.x !== circle2.x || item.y !== circle2.y)) {
 					circle1.x = item.x;
 					circle1.y = item.y;
 					setCoords([
@@ -137,7 +140,7 @@ export const BezierDrawer = ({ onCoordUpdate }) => {
 			});
 
 			intersections.forEach((item) => {
-				if (distanceXY(e.pageX, e.pageY, item.x, item.y) < threshold2 && (item.x !== circle1.x || item.y !== circle1.y)) {
+				if (distanceXY(e.offsetX, e.offsetY, item.x, item.y) < threshold2 && (item.x !== circle1.x || item.y !== circle1.y)) {
 					circle2.x = item.x;
 					circle2.y = item.y;
 
@@ -152,9 +155,9 @@ export const BezierDrawer = ({ onCoordUpdate }) => {
 		}
 
 		function onMouseUp() {
-			document.removeEventListener('mousemove', onMouseMove);
-			document.removeEventListener('mousemove', onMouseMove2);
-			document.removeEventListener('mouseup', onMouseUp);
+			canvas.removeEventListener('mousemove', onMouseMove);
+			canvas.removeEventListener('mousemove', onMouseMove2);
+			canvas.removeEventListener('mouseup', onMouseUp);
 		}
 		draw();
 		drawVerticalLines();

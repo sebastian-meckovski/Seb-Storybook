@@ -13,10 +13,5 @@ export const BezierDrawerExample = () => {
 		setCoords(e);
 	};
 
-	return (
-		<>
-			<BezierDrawer onCoordUpdate={onCoordUpdate} />
-      <pre>{JSON.stringify(coords, 0, 2)}</pre> 
-		</>
-	);
+	return <BezierDrawer onCoordUpdate={onCoordUpdate} />;
 };
