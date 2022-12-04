@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './BezierDrawer.scss'
 
-export const BezierDrawer = ({ onCoordUpdate }) => {
+export const BezierDrawer = ({ onCoordUpdate, size }) => {
 	const canvasRef = useRef(null);
 
-	const canvasSize = 600;
+	const canvasSize = size;
 	
 	const [coords, setCoords] = useState([
 		{ x: canvasSize * 0.1, y: canvasSize * 0.2 },
@@ -86,10 +86,7 @@ export const BezierDrawer = ({ onCoordUpdate }) => {
 		}
 
 		canvas.addEventListener('mousedown', function (e) {
-			
-
-			console.log(e)
-			if (circlePointCollision(e.offsetX, e.offsetY, circle1)) {
+						if (circlePointCollision(e.offsetX, e.offsetY, circle1)) {
 				canvas.addEventListener('mousemove', onMouseMove);
 				canvas.addEventListener('mouseup', onMouseUp);
 			}
