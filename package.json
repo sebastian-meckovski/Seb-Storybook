@@ -1,6 +1,6 @@
 {
 	"name": "seb-curved-line-drawer",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "just playing around",
 	"main": "dist/SebComponents.js",
 	"scripts": {
