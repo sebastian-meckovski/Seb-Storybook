@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './BezierDrawer.scss';
 
 export const BezierDrawer = ({ onCoordUpdate, size }) => {
 	const canvasRef = useRef(null);

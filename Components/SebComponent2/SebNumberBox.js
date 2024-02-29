@@ -1,5 +1,4 @@
 import React from "react";
-import "./number-box-style.scss";
 
 export const SebNumberBox = () => {
   return (
