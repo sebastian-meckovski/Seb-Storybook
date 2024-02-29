@@ -1,15 +1,18 @@
 {
 	"name": "seb-components-library",
-	"version": "1.0.5",
-	"description": "just playing around",
+	"version": "1.0.12",
+	"description": "Sebastian's personal component library",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"build": "webpack"
+		"build": "npx tsc"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"author": "Sebastian Meckovski",
 	"license": "ISC",
 	"devDependencies": {
@@ -30,8 +33,7 @@
 		"react-dom": "^18.2.0",
 		"source-map-loader": "^5.0.0",
 		"storybook": "^7.6.17",
-		"webpack": "^5.90.3",
-		"webpack-cli": "^5.1.4",
-		"webpack-node-externals": "^3.0.0"
+		"ts-loader": "^9.5.1",
+		"typescript": "^5.3.3"
 	}
 }
