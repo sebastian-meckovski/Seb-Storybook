@@ -1,7 +1,7 @@
 import React from "react";
 import './Switch.scss'
 
-interface props extends React.HTMLProps<HTMLInputElement> { }
+interface props extends React.HTMLProps<HTMLInputElement> {}
 
 export const Switch = ({ ...rest }: props) => {
     return (

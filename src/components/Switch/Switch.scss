@@ -1,10 +1,9 @@
-$greenspark-green: #3B755F;
-$greenspark-white: #F9F9F9;
-$greenspark-light-green: #AFC6BD;
+$greenspark-green: #3b755f;
+$greenspark-white: #f9f9f9;
+$greenspark-light-green: #afc6bd;
 $greenspark-light-green-transparent: #afc6bda6;
-$greenspark-switch-border: #F2EBDB;
+$greenspark-switch-border: #f2ebdb;
 $greenspark-switch-outer-border: #b0b0b0;
-
 
 .switch {
   position: relative;
@@ -16,7 +15,6 @@ $greenspark-switch-outer-border: #b0b0b0;
 
 .switch input {
   margin: 0;
-  opacity: 0;
   width: 100%;
   height: 100%;
 }
@@ -31,12 +29,13 @@ $greenspark-switch-outer-border: #b0b0b0;
   right: 0;
   bottom: 0;
   background-color: $greenspark-white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 34px;
 
   &:before {
-    box-shadow: 0 0 0px 0px $greenspark-light-green-transparent, 0 0 2px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0px 0px $greenspark-light-green-transparent,
+      0 0 2px 2px rgba(0, 0, 0, 0.15);
     outline: 1px solid $greenspark-switch-border;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -45,21 +44,22 @@ $greenspark-switch-outer-border: #b0b0b0;
     content: "";
     height: 1.5rem;
     width: 1.5rem;
-    left: .0rem;
+    left: 0rem;
     background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     border-radius: 50%;
   }
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: $greenspark-green;
   outline: 1px solid $greenspark-switch-outer-border;
 }
 
-input:checked+.slider:before {
-  box-shadow: 0 0 0px 0px $greenspark-light-green-transparent, 0 0 2px 2px rgba(0, 0, 0, 0.15);
+input:checked + .slider:before {
+  box-shadow: 0 0 0px 0px $greenspark-light-green-transparent,
+    0 0 2px 2px rgba(0, 0, 0, 0.15);
   outline: 1px solid $greenspark-green;
   -webkit-transform: translateX(1.5rem);
   -ms-transform: translateX(1.5rem);
@@ -67,7 +67,8 @@ input:checked+.slider:before {
 }
 
 @media (pointer: fine) {
-  input:hover+.slider:before {
-    box-shadow: 0 0 0px 8px $greenspark-light-green-transparent, 0 0 2px 2px rgba(0, 0, 0, 0.15);
+  input:hover + .slider:before {
+    box-shadow: 0 0 0px 8px $greenspark-light-green-transparent,
+      0 0 2px 2px rgba(0, 0, 0, 0.15);
   }
 }
