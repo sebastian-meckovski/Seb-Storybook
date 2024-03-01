@@ -1,2 +1,3 @@
-export * from './Components/SebComponent/SebComponent'
-export * from './Components/BezierDrawer/BezierDrawer'
+export * from './src/components/SebComponent/SebComponent'
+export * from './src/components/BezierDrawer/BezierDrawer'
+export * from './src/components/Switch/Swtich'

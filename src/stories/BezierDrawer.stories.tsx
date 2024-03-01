@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { BezierDrawer } from '../Components/BezierDrawer/BezierDrawer';
+import { BezierDrawer } from '../components/BezierDrawer/BezierDrawer';
 
 const meta: Meta<typeof BezierDrawer> = {
   component: BezierDrawer,
