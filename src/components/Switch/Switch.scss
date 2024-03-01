@@ -1,13 +1,14 @@
 $greenspark-green: #3b755f;
 $greenspark-white: #f9f9f9;
 $greenspark-light-green: #afc6bd;
-$greenspark-light-green-transparent: #afc6bda6;
+$greenspark-light-green-transparent: #afc6bd7c;
 $greenspark-switch-border: #f2ebdb;
 $greenspark-switch-outer-border: #b0b0b0;
 
 .switch {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  margin: 0.25rem;
   width: 3rem;
   height: 1.5rem;
   -webkit-tap-highlight-color: transparent;
@@ -29,8 +30,8 @@ $greenspark-switch-outer-border: #b0b0b0;
   right: 0;
   bottom: 0;
   background-color: $greenspark-white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   border-radius: 34px;
 
   &:before {
@@ -46,8 +47,8 @@ $greenspark-switch-outer-border: #b0b0b0;
     width: 1.5rem;
     left: 0rem;
     background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
     border-radius: 50%;
   }
 }
