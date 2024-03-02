@@ -2,11 +2,8 @@ import React from "react";
 import "./ProductWidget.scss";
 import "../../shared/globalStyles.scss";
 import { GreenSparkSVGLogo } from "../../SVG/GreenSparkSVGLogo";
-import {
-  IProductWidgetProps,
-  WidgetTypeDict,
-  productWidgetColors,
-} from "../../../src/shared/types";
+import { InfoMark } from "../../SVG/InfoMarkSVG";
+import { IProductWidgetProps, WidgetTypeDict } from "../../../src/shared/types";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { ColorRadioButton } from "../ColorRadioButton/ColorRadioButton";
 import { Switch } from "../Switch/Swtich";
@@ -22,6 +19,8 @@ export const ProductWidget = ({
   linked,
   active,
   availableColors,
+  handleOnMouseEnter,
+  handleOnMouseLeave,
   handleCheckboxClick,
   handleSwitchClick,
   handleColorClick,
@@ -48,7 +47,21 @@ export const ProductWidget = ({
       </div>
       <div className={`${container}-body`}>
         <div className={`${container}-body-item`}>
-          <p>Link to Public Profile</p>
+          <div className={`${container}-body-item`}>
+            <p>Link to Public Profile</p>
+            <InfoMark
+              handleOnMouseEnter={(e: any) => {
+                setTimeout(() => {
+                  handleOnMouseEnter(e);
+                }, 300);
+              }}
+              onMouseLeave={(e: any) => {
+                setTimeout(() => {
+                  handleOnMouseLeave(e);
+                }, 300);
+              }}
+            />
+          </div>
           <Checkbox
             checked={linked}
             onChange={(e) => {
