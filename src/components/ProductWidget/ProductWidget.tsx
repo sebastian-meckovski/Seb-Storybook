@@ -25,7 +25,6 @@ export const ProductWidget = ({
   handleSwitchClick,
   handleColorClick,
 }: IProductWidgetProps) => {
-  console.log(productWidgetColors['black'])
   return (
     <section className={`${container}`}>
       <div
