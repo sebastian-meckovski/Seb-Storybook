@@ -3,7 +3,7 @@ import "./ProductWidget.scss";
 import "../../shared/globalStyles.scss";
 import { GreenSparkSVGLogo } from "../../SVG/GreenSparkSVGLogo";
 import { InfoMark } from "../../SVG/InfoMarkSVG";
-import { IProductWidgetProps, WidgetTypeDict, productWidgetColors } from "../../../src/shared/types";
+import { IProductWidgetProps, WidgetTypeDict } from "../../../src/shared/types";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { ColorRadioButton } from "../ColorRadioButton/ColorRadioButton";
 import { Switch } from "../Switch/Swtich";
