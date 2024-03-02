@@ -19,8 +19,13 @@ export const ProductWidget = ({
   action,
   amount,
   type,
+  linked,
+  active,
+  availableColors,
+  handleCheckboxClick,
+  handleSwitchClick,
+  handleColorClick,
 }: IProductWidgetProps) => {
-  const colors = Object.values(productWidgetColors);
   return (
     <section className={`${container}`}>
       <div
@@ -44,24 +49,32 @@ export const ProductWidget = ({
       <div className={`${container}-body`}>
         <div className={`${container}-body-item`}>
           <p>Link to Public Profile</p>
-          <Checkbox />
+          <Checkbox
+            checked={linked}
+            onChange={(e) => {
+              handleCheckboxClick(e);
+            }}
+          />
         </div>
         <div className={`${container}-body-item`}>
           <p> Badge colour</p>
           <div>
-            {colors.map((x) => {
+            {availableColors.map((x) => {
               return (
                 <ColorRadioButton
+                  checked={x == selectedColor}
+                  onChange={handleColorClick}
+                  key={x}
                   name={`radio-group-${id}`}
                   style={{ backgroundColor: x.slice(0, 7) }}
-                  // checked={selectedColor == x}
                 />
               );
             })}
           </div>
         </div>
         <div className={`${container}-body-item`}>
-          <p>Activate badge</p> <Switch />
+          <p>Activate badge</p>{" "}
+          <Switch checked={active} onChange={handleSwitchClick} />
         </div>
       </div>
     </section>

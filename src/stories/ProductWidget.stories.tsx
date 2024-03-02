@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProductWidget } from "../components/ProductWidget/ProductWidget";
-import React from "react";
+import React, { useState } from "react";
 import { IProductWidget, productWidgetColors } from "../shared/types";
 
 const meta: Meta<typeof ProductWidget> = {
@@ -42,18 +42,30 @@ const mock_api_response: IProductWidget[] = [
 
 export const Example: Story = {
   render: () => {
+    const [apiDataState, setApiDataState] = useState(mock_api_response);
     return (
       <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-        {mock_api_response.map((x) => {
+        {apiDataState.map((x) => {
           return (
             <ProductWidget
+              key={x.id}
               amount={x.amount}
               action={x.action}
               id={x.id}
               active={x.active}
               type={x.type}
               linked={x.linked}
+              availableColors={Object.values(productWidgetColors)}
               selectedColor={x.selectedColor}
+              handleCheckboxClick={(e) => {
+                console.log(e.target.checked);
+              }}
+              handleSwitchClick={(e) => {
+                console.log(e.target.checked);
+              }}
+              handleColorClick={(e) => {
+                console.log(e.target.checked);
+              }}
             />
           );
         })}

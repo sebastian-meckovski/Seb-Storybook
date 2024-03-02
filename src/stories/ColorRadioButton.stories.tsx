@@ -13,7 +13,7 @@ export const Example: Story = {
   render: () => {
     return (
       <>
-        <ColorRadioButton
+        <ColorRadioButton  
           style={{ backgroundColor: "#2E3A8C" }}
           name={"test"}
         />

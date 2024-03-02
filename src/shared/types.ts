@@ -25,4 +25,9 @@ export interface IProductWidget {
   linked: boolean;
   selectedColor: productWidgetColors;
 }
-export interface IProductWidgetProps extends IProductWidget {}
+export interface IProductWidgetProps extends IProductWidget {
+  availableColors: string[];
+  handleCheckboxClick: (e: any) => void;
+  handleSwitchClick: (e: any) => void;
+  handleColorClick: (e: any) => void;
+}
