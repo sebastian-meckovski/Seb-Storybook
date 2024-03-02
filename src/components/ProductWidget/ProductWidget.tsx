@@ -50,7 +50,7 @@ export const ProductWidget = ({
           <div className={`${container}-body-item`}>
             <p>Link to Public Profile</p>
             <InfoMark
-              handleOnMouseEnter={(e: any) => {
+              onMouseEnter={(e: any) => {
                 setTimeout(() => {
                   handleOnMouseEnter(e);
                 }, 300);
