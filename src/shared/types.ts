@@ -1,12 +1,18 @@
 export enum productWidgetColors {
-  white = "#ffffff",
-  black = "#000000",
-  blue = "#2e3a8c",
-  green = "#3B755F",
-  beige = "#F2EBDB",
+  blue = "#2e3a8c#ffffff",
+  green = "#3B755F#ffffff",
+  beige = "#F2EBDB#3B755F",
+  white = "#ffffff#3B755F",
+  black = "#000000#ffffff",
 }
 
 export type WidgetType = "carbon" | "plastic bottles" | "trees";
+
+export const WidgetTypeDict = {
+  carbon: "kg of carbon",
+  "plastic bottles": " plastic bottles",
+  trees: " trees",
+};
 
 export type productWidgetActions = "collects" | "plants" | "offsets";
 
@@ -19,10 +25,4 @@ export interface IProductWidget {
   linked: boolean;
   selectedColor: productWidgetColors;
 }
-export interface IProductWidgetProps extends IProductWidget {
-  headingA: string;
-  headingB: string;
-  headingStyle: {
-    [key: string]: string;
-  };
-}
+export interface IProductWidgetProps extends IProductWidget {}

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProductWidget } from "../components/ProductWidget/ProductWidget";
 import React from "react";
-import { productWidgetColors } from "../shared/types";
+import { IProductWidget, productWidgetColors } from "../shared/types";
 
 const meta: Meta<typeof ProductWidget> = {
   component: ProductWidget,
@@ -10,24 +10,54 @@ export default meta;
 
 type Story = StoryObj<typeof ProductWidget>;
 
+const mock_api_response: IProductWidget[] = [
+  {
+    id: 1,
+    type: "plastic bottles",
+    amount: 100,
+    action: "collects",
+    active: true,
+    linked: true,
+    selectedColor: productWidgetColors["green"],
+  },
+  {
+    id: 2,
+    type: "trees",
+    amount: 10,
+    action: "plants",
+    active: false,
+    linked: false,
+    selectedColor: productWidgetColors["beige"],
+  },
+  {
+    id: 3,
+    type: "carbon",
+    amount: 20,
+    action: "offsets",
+    active: false,
+    linked: false,
+    selectedColor: productWidgetColors["blue"],
+  },
+];
+
 export const Example: Story = {
   render: () => {
     return (
-      <ProductWidget
-        amount={100}
-        action={"collects"}
-        id={123}
-        active={true}
-        type="carbon"
-        linked={true}
-        selectedColor={productWidgetColors.black}
-        headingA={"This product collects"}
-        headingB={"100 plastic bottles"}
-        headingStyle={{
-          color: "white",
-          backgroundColor: "#2E3A8C",
-        }}
-      />
+      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+        {mock_api_response.map((x) => {
+          return (
+            <ProductWidget
+              amount={x.amount}
+              action={x.action}
+              id={x.id}
+              active={x.active}
+              type={x.type}
+              linked={x.linked}
+              selectedColor={x.selectedColor}
+            />
+          );
+        })}
+      </div>
     );
   },
 };
