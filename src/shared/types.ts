@@ -29,7 +29,7 @@ export interface IProductWidgetProps extends IProductWidget {
   availableColors: string[];
   handleCheckboxClick: (e: any) => void;
   handleSwitchClick: (e: any) => void;
-  handleColorClick: (e: any) => void;
+  handleColorClick: (e: any, color: string) => void;
   handleOnMouseEnter: (e: any) => void;
   handleOnMouseLeave: (e: any) => void;
 }

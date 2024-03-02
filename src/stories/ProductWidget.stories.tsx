@@ -63,8 +63,9 @@ export const Example: Story = {
               handleSwitchClick={(e) => {
                 console.log(e.target.checked);
               }}
-              handleColorClick={(e) => {
+              handleColorClick={(e, color) => {
                 console.log(e.target.checked);
+                console.log(color)
               }}
               handleOnMouseEnter={(e) => {
                 console.log("mouse entering...", e);

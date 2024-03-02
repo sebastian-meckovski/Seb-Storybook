@@ -3,7 +3,7 @@ import "./ProductWidget.scss";
 import "../../shared/globalStyles.scss";
 import { GreenSparkSVGLogo } from "../../SVG/GreenSparkSVGLogo";
 import { InfoMark } from "../../SVG/InfoMarkSVG";
-import { IProductWidgetProps, WidgetTypeDict } from "../../../src/shared/types";
+import { IProductWidgetProps, WidgetTypeDict, productWidgetColors } from "../../../src/shared/types";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { ColorRadioButton } from "../ColorRadioButton/ColorRadioButton";
 import { Switch } from "../Switch/Swtich";
@@ -25,6 +25,7 @@ export const ProductWidget = ({
   handleSwitchClick,
   handleColorClick,
 }: IProductWidgetProps) => {
+  console.log(productWidgetColors['black'])
   return (
     <section className={`${container}`}>
       <div
@@ -76,7 +77,7 @@ export const ProductWidget = ({
               return (
                 <ColorRadioButton
                   checked={x == selectedColor}
-                  onChange={handleColorClick}
+                  onChange={(e) => handleColorClick(e, x)}
                   key={x}
                   name={`radio-group-${id}`}
                   style={{ backgroundColor: x.slice(0, 7) }}
