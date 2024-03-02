@@ -1,0 +1,38 @@
+$greenspark-green: #3b755f;
+$greenspark-white: #f9f9f9;
+$greenspark-light-green: #afc6bd;
+$greenspark-light-green-transparent: #3b755f20;
+$greenspark-switch-border: #f2ebdb;
+$greenspark-switch-outer-border: #b0b0b0;
+$greenspark-white: #ffffff;
+$greenspark-white-transparent: #ffffff33;
+$greenspark-blue: #2e3a8c;
+
+.product-widget-container {
+  width: 14rem;
+  height: 12rem;
+  border: 1px solid black;
+  &-header {
+    height: 33%;
+    align-items: center;
+    border-radius: 6px;
+    display: flex;
+    margin: auto;
+    &-items {
+      display: flex;
+      margin: auto;
+      gap: 0.5rem;
+      &-heading {
+        margin: auto;
+        align-items: center;
+      }
+    }
+  }
+  &-body {
+    color: $greenspark-green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 67%;
+  }
+}
