@@ -37,6 +37,6 @@
   },
   "include": ["./**/*.ts"],
   "exclude": [
-    "node_modules/**/*", "webpack.config.ts"
+    "node_modules/**/*", "webpack.config.ts", "src/stories/**/*"
   ]
 }
