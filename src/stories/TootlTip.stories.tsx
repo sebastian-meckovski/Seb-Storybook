@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ToolTip } from "../components/Tooltip/ToolTip";
+import React from "react";
 
 const meta: Meta<typeof ToolTip> = {
   component: ToolTip,
@@ -10,6 +11,7 @@ type Story = StoryObj<typeof ToolTip>;
 
 export const Example: Story = {
   args: {
+    style: { top: "5rem", left: "12rem" },
     target: "blank",
     anchorContent: "View Public Profile",
     href: "https://sebastian-meckovski.github.io/",

@@ -65,13 +65,14 @@ export const Example: Story = {
               }}
               handleColorClick={(e, color) => {
                 console.log(e.target.checked);
-                console.log(color)
+                console.log(color);
               }}
               handleOnMouseEnter={(e) => {
-                console.log("mouse entering...", e);
-              }}
-              handleOnMouseLeave={(e) => {
-                console.log("mouse leaving...", e);
+                setTimeout(() => {
+                  const position = e.target.getBoundingClientRect();
+                  console.log(e);
+                  console.log(position);
+                }, 300);
               }}
             />
           );

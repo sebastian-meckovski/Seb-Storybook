@@ -20,7 +20,6 @@ export const ProductWidget = ({
   active,
   availableColors,
   handleOnMouseEnter,
-  handleOnMouseLeave,
   handleCheckboxClick,
   handleSwitchClick,
   handleColorClick,
@@ -49,18 +48,14 @@ export const ProductWidget = ({
         <div className={`${container}-body-item`}>
           <div className={`${container}-body-item`}>
             <p>Link to Public Profile</p>
-            <InfoMark
+            <div
               onMouseEnter={(e: any) => {
-                setTimeout(() => {
-                  handleOnMouseEnter(e);
-                }, 300);
+                e.stopPropagation();
+                handleOnMouseEnter(e);
               }}
-              onMouseLeave={(e: any) => {
-                setTimeout(() => {
-                  handleOnMouseLeave(e);
-                }, 300);
-              }}
-            />
+            >
+              <InfoMark />
+            </div>
           </div>
           <Checkbox
             checked={linked}

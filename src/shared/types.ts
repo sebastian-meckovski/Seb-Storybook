@@ -31,5 +31,4 @@ export interface IProductWidgetProps extends IProductWidget {
   handleSwitchClick: (e: any) => void;
   handleColorClick: (e: any, color: string) => void;
   handleOnMouseEnter: (e: any) => void;
-  handleOnMouseLeave: (e: any) => void;
 }
