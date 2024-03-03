@@ -68,20 +68,13 @@ export const Example: Story = {
                 console.log(color);
               }}
               handleOnMouseEnter={(e) => {
-                setTimeout(() => {
-                  const position = e.target.getBoundingClientRect();
-                  console.log(e);
-                  console.log(position);
-                }, 300);
+                console.log("Mouse Enter..");
               }}
               handleInfoMarkFocus={(e) => {
-                console.log("on focus..");
+                console.log("On foucus..");
               }}
               handleInfoMarkBlur={(e) => {
                 console.log("on blur..");
-              }}
-              HandleInfoMarkKeyDown={(e) => {
-                console.log('key pressed')
               }}
             />
           );

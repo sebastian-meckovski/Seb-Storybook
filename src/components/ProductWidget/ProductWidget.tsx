@@ -25,7 +25,6 @@ export const ProductWidget = ({
   handleColorClick,
   handleInfoMarkFocus,
   handleInfoMarkBlur,
-  HandleInfoMarkKeyDown,
 }: IProductWidgetProps) => {
   return (
     <section className={`${container}`}>
@@ -55,7 +54,6 @@ export const ProductWidget = ({
               onFocus={handleInfoMarkFocus}
               onBlur={handleInfoMarkBlur}
               onMouseEnter={handleOnMouseEnter}
-              onKeyDown={HandleInfoMarkKeyDown}
             />
           </div>
           <Checkbox

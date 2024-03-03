@@ -1,12 +1,4 @@
-$greenspark-green: #3b755f;
-$greenspark-white: #f9f9f9;
-$greenspark-light-green: #afc6bd;
-$greenspark-light-green-transparent: #3b755f20;
-$greenspark-switch-border: #f2ebdb;
-$greenspark-switch-outer-border: #b0b0b0;
-$greenspark-white: #ffffff;
-$greenspark-white-transparent: #ffffff33;
-$greenspark-blue: #2e3a8c;
+@import '../../shared/globalStyles.scss';
 
 .product-widget-container {
   width: 14rem;

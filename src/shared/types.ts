@@ -20,7 +20,7 @@ export interface IProductWidget {
   readonly id: number;
   readonly type: WidgetType;
   readonly action: productWidgetActions;
-  amount: number;
+  readonly amount: number;
   active: boolean;
   linked: boolean;
   selectedColor: productWidgetColors;
@@ -33,5 +33,4 @@ export interface IProductWidgetProps extends IProductWidget {
   handleOnMouseEnter: (e: any) => void;
   handleInfoMarkFocus: (e: any) => void;
   handleInfoMarkBlur: (e: any) => void;
-  HandleInfoMarkKeyDown: (e: any) => void;
 }

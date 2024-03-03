@@ -1,9 +1,4 @@
-$greenspark-green: #3b755f;
-$greenspark-white: #f9f9f9;
-$greenspark-light-green: #afc6bd;
-$greenspark-light-green-transparent: #afc6bd7c;
-$greenspark-switch-border: #f2ebdb;
-$greenspark-switch-outer-border: #b0b0b0;
+@import '../../shared/globalStyles.scss';
 
 .tooltip {
   justify-content: space-around;
@@ -15,6 +10,7 @@ $greenspark-switch-outer-border: #b0b0b0;
   padding: 1rem 0.5rem;
   text-align: center;
   box-shadow: 0rem 2rem 10rem 1px rgba(0, 0, 0, 0.315);
+  background-color: white;
 
   p{
     font-size: 14px;

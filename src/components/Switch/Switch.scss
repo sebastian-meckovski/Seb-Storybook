@@ -1,9 +1,4 @@
-$greenspark-green: #3b755f;
-$greenspark-white: #f9f9f9;
-$greenspark-light-green: #afc6bd;
-$greenspark-light-green-transparent: #afc6bd7c;
-$greenspark-switch-border: #f2ebdb;
-$greenspark-switch-outer-border: #b0b0b0;
+@import '../../shared/globalStyles.scss';
 
 .switch {
   position: relative;
