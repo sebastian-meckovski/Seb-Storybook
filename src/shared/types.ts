@@ -17,9 +17,9 @@ export const WidgetTypeDict = {
 export type productWidgetActions = "collects" | "plants" | "offsets";
 
 export interface IProductWidget {
-  id: number;
-  type: WidgetType;
-  action: productWidgetActions;
+  readonly id: number;
+  readonly type: WidgetType;
+  readonly action: productWidgetActions;
   amount: number;
   active: boolean;
   linked: boolean;
@@ -31,4 +31,7 @@ export interface IProductWidgetProps extends IProductWidget {
   handleSwitchClick: (e: any) => void;
   handleColorClick: (e: any, color: string) => void;
   handleOnMouseEnter: (e: any) => void;
+  handleInfoMarkFocus: (e: any) => void;
+  handleInfoMarkBlur: (e: any) => void;
+  HandleInfoMarkKeyDown: (e: any) => void;
 }

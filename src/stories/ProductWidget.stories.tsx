@@ -74,6 +74,15 @@ export const Example: Story = {
                   console.log(position);
                 }, 300);
               }}
+              handleInfoMarkFocus={(e) => {
+                console.log("on focus..");
+              }}
+              handleInfoMarkBlur={(e) => {
+                console.log("on blur..");
+              }}
+              HandleInfoMarkKeyDown={(e) => {
+                console.log('key pressed')
+              }}
             />
           );
         })}

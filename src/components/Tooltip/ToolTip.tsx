@@ -6,6 +6,9 @@ interface props {
   anchorContent: string;
   href: string;
   target: string;
+  tooltipAnchorRef: React.RefObject<any>;
+  handleTooltipAnchorBlur?: (e: any) => void;
+  handleTooltipAnchorKeyPress?: (e: any) => void;
 }
 
 export const ToolTip = ({
@@ -13,11 +16,20 @@ export const ToolTip = ({
   anchorContent,
   href,
   target,
+  tooltipAnchorRef,
+  handleTooltipAnchorBlur,
+  handleTooltipAnchorKeyPress,
 }: props) => {
   return (
     <div className="tooltip">
       <p>{tootlipcontent} </p>
-      <a href={href} target={target}>
+      <a
+        href={href}
+        target={target}
+        ref={tooltipAnchorRef}
+        onBlur={handleTooltipAnchorBlur}
+        onKeyDown={handleTooltipAnchorKeyPress}
+      >
         {anchorContent}
       </a>
     </div>

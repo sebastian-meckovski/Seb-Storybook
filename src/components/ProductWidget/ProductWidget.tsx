@@ -23,6 +23,9 @@ export const ProductWidget = ({
   handleCheckboxClick,
   handleSwitchClick,
   handleColorClick,
+  handleInfoMarkFocus,
+  handleInfoMarkBlur,
+  HandleInfoMarkKeyDown,
 }: IProductWidgetProps) => {
   return (
     <section className={`${container}`}>
@@ -48,14 +51,15 @@ export const ProductWidget = ({
         <div className={`${container}-body-item`}>
           <div className={`${container}-body-item`}>
             <p>Link to Public Profile</p>
-              <InfoMark
-                onMouseEnter={(e: any) => {
-                  e.stopPropagation();
-                  handleOnMouseEnter(e);
-                }}
-              />
+            <InfoMark
+              onFocus={handleInfoMarkFocus}
+              onBlur={handleInfoMarkBlur}
+              onMouseEnter={handleOnMouseEnter}
+              onKeyDown={HandleInfoMarkKeyDown}
+            />
           </div>
           <Checkbox
+            id={`checkbox-${id}`}
             checked={linked}
             onChange={(e) => {
               handleCheckboxClick(e);
@@ -79,8 +83,12 @@ export const ProductWidget = ({
           </div>
         </div>
         <div className={`${container}-body-item`}>
-          <p>Activate badge</p>{" "}
-          <Switch checked={active} onChange={handleSwitchClick} />
+          <p>Activate badge</p>
+          <Switch
+            checked={active}
+            onChange={handleSwitchClick}
+            id={`switch-${id}`}
+          />
         </div>
       </div>
     </section>

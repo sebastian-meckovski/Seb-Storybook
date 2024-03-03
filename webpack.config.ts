@@ -25,6 +25,18 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(gif|png)$/, 
+                use: [
+                  {
+                    loader: 'url-loader',
+                    options: {
+                      limit: 10000,
+                      name: './public' + '.[ext]'
+                    }
+                  }
+               ]
+              },
+            {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,

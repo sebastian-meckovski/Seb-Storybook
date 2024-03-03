@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ToolTip } from "../components/Tooltip/ToolTip";
-import React from "react";
+import React, { useRef } from "react";
 
 const meta: Meta<typeof ToolTip> = {
   component: ToolTip,
@@ -16,5 +16,9 @@ export const Example: Story = {
     href: "https://sebastian-meckovski.github.io/",
     tootlipcontent:
       "This widget links directly to your public profile so that you can easily share your impact with your customers. Turn it off here if you do not want the badge to link to it.",
+  },
+  render: (args) => {
+    const myRef = useRef(null);
+    return <ToolTip {...args} tooltipAnchorRef={myRef} />;
   },
 };

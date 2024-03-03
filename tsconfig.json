@@ -38,5 +38,6 @@
   "include": ["./**/*.ts"],
   "exclude": [
     "node_modules/**/*", "webpack.config.ts", "src/stories/**/*"
-  ]
+  ],
+  "files": ["./index.d.ts"]
 }
