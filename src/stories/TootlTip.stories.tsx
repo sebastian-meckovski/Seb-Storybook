@@ -11,7 +11,6 @@ type Story = StoryObj<typeof ToolTip>;
 
 export const Example: Story = {
   args: {
-    style: { top: "5rem", left: "12rem" },
     target: "blank",
     anchorContent: "View Public Profile",
     href: "https://sebastian-meckovski.github.io/",

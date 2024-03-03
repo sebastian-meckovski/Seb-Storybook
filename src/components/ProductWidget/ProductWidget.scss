@@ -12,6 +12,7 @@ $greenspark-blue: #2e3a8c;
   width: 14rem;
   height: 12rem;
   &-header {
+    transition: all 0.3s ease 0s;
     height: 33%;
     align-items: center;
     border-radius: 6px;

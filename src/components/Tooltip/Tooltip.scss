@@ -5,17 +5,18 @@ $greenspark-light-green-transparent: #afc6bd7c;
 $greenspark-switch-border: #f2ebdb;
 $greenspark-switch-outer-border: #b0b0b0;
 
-.tooltip-container {
-  transform: translate(-50%, -20%);
-  width: 18rem;
-  height: 12rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
+.tooltip {
+  justify-content: space-around;
   flex-direction: column;
+  display: flex;
+  width: 14rem;
+  height: 10rem;
+  border-radius: 0.25rem;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  box-shadow: 0rem 2rem 10rem 1px rgba(0, 0, 0, 0.315);
 
-  p {
+  p{
     font-size: 14px;
   }
   a {
@@ -23,18 +24,4 @@ $greenspark-switch-outer-border: #b0b0b0;
     font-weight: 200;
     cursor: pointer;
   }
-}
-
-.tooltip {
-  padding: 0.75rem;
-  text-align: center;
-  height: 75%;
-  width: 75%;
-  margin: auto;
-  box-shadow: 0rem 2rem 10rem 1px rgba(0, 0, 0, 0.315);
-  border-radius: 0.25rem;
-}
-
-.hidden {
-  display: none;
 }

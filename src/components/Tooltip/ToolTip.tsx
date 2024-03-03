@@ -1,7 +1,7 @@
 import React from "react";
 import "./Tooltip.scss";
 
-interface props extends React.HTMLProps<HTMLDivElement> {
+interface props {
   tootlipcontent: string;
   anchorContent: string;
   href: string;
@@ -13,16 +13,13 @@ export const ToolTip = ({
   anchorContent,
   href,
   target,
-  ...rest
 }: props) => {
   return (
-    <div className="tooltip-container" {...rest}>
-      <div className="tooltip">
-        <p>{tootlipcontent} </p>{" "}
-        <a href={href} target={target}>
-          {anchorContent}
-        </a>
-      </div>
+    <div className="tooltip">
+      <p>{tootlipcontent} </p>
+      <a href={href} target={target}>
+        {anchorContent}
+      </a>
     </div>
   );
 };

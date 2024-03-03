@@ -48,14 +48,12 @@ export const ProductWidget = ({
         <div className={`${container}-body-item`}>
           <div className={`${container}-body-item`}>
             <p>Link to Public Profile</p>
-            <div
-              onMouseEnter={(e: any) => {
-                e.stopPropagation();
-                handleOnMouseEnter(e);
-              }}
-            >
-              <InfoMark />
-            </div>
+              <InfoMark
+                onMouseEnter={(e: any) => {
+                  e.stopPropagation();
+                  handleOnMouseEnter(e);
+                }}
+              />
           </div>
           <Checkbox
             checked={linked}
