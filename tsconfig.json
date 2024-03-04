@@ -35,9 +35,10 @@
     "declaration": true,
     "module": "CommonJS"
   },
-  "include": ["./**/*.ts"],
+  "types": ["node", "jest", "@testing-library/jest-dom"],
+  "include": ["./**/*.ts", "src/components/Checkbox/CheckBox.test.tsx"],
   "exclude": [
     "node_modules/**/*", "webpack.config.ts", "src/stories/**/*"
   ],
-  "files": ["./index.d.ts"]
+  "files": ["./index.d.ts"],
 }

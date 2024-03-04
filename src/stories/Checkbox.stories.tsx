@@ -8,4 +8,8 @@ export default meta;
 
 type Story = StoryObj<typeof Checkbox>;
 
-export const Example: Story = {};
+export const Example: Story = {
+  args:{
+    title: 'checkbox title'
+  }
+};
