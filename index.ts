@@ -5,6 +5,7 @@ export * from './src/components/Checkbox/Checkbox'
 export * from './src/components/ColorRadioButton/ColorRadioButton'
 export * from './src/components/ProductWidget/ProductWidget'
 export * from './src/components/Tooltip/ToolTip'
+export * from './src/components/LoadingSpinner/LoadingSpinner'
 
 // types
 export * from './src/shared/types'
