@@ -3,6 +3,7 @@
 .product-widget-container {
   width: 14rem;
   height: 12rem;
+  animation: fadeIn 0.3s;
   &-header {
     transition: all 0.3s ease 0s;
     height: 33%;
@@ -36,5 +37,16 @@
         width: 1.25rem;
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.8;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
   }
 }
