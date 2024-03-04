@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
-import './globalStorybookStyles.css';
+import "./globalStorybookStyles.css";
+import "@storybook/addon-console";
 
 const preview: Preview = {
   parameters: {

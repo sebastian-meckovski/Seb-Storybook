@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
     "@storybook/addon-styling-webpack",
+    "storybook-state-addon",
     {
       name: "@storybook/addon-styling-webpack",
 
@@ -84,6 +85,7 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+    defaultName: 'Documentation',
   },
 };
 export default config;

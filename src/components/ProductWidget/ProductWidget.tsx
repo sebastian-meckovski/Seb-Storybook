@@ -57,6 +57,7 @@ export const ProductWidget = ({
             />
           </div>
           <Checkbox
+            title={`${amount} ${type} - Link to Public Profile`}
             id={`checkbox-${id}`}
             checked={linked}
             onChange={(e) => {
@@ -83,6 +84,7 @@ export const ProductWidget = ({
         <div className={`${container}-body-item`}>
           <p>Activate badge</p>
           <Switch
+            title={`${amount} ${type} - Activate badge`}
             checked={active}
             onChange={handleSwitchClick}
             id={`switch-${id}`}

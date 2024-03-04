@@ -5,81 +5,39 @@ import { IProductWidget, productWidgetColors } from "../shared/types";
 
 const meta: Meta<typeof ProductWidget> = {
   component: ProductWidget,
+  tags: ['autodocs']
 };
 export default meta;
 
 type Story = StoryObj<typeof ProductWidget>;
 
-const mock_api_response: IProductWidget[] = [
-  {
-    id: 1,
-    type: "plastic bottles",
-    amount: 100,
-    action: "collects",
+export const Example: Story = {
+  args: {
+    id: 20,
+    amount: 200,
+    selectedColor: productWidgetColors.blue,
+    availableColors: Object.values(productWidgetColors),
+    action: "offsets",
     active: true,
     linked: true,
-    selectedColor: productWidgetColors["green"],
-  },
-  {
-    id: 2,
-    type: "trees",
-    amount: 10,
-    action: "plants",
-    active: false,
-    linked: false,
-    selectedColor: productWidgetColors["beige"],
-  },
-  {
-    id: 3,
-    type: "carbon",
-    amount: 20,
-    action: "offsets",
-    active: false,
-    linked: false,
-    selectedColor: productWidgetColors["blue"],
-  },
-];
-
-export const Example: Story = {
-  render: () => {
-    const [apiDataState, setApiDataState] = useState(mock_api_response);
-    return (
-      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-        {apiDataState.map((x) => {
-          return (
-            <ProductWidget
-              key={x.id}
-              amount={x.amount}
-              action={x.action}
-              id={x.id}
-              active={x.active}
-              type={x.type}
-              linked={x.linked}
-              availableColors={Object.values(productWidgetColors)}
-              selectedColor={x.selectedColor}
-              handleCheckboxClick={(e) => {
-                console.log(e.target.checked);
-              }}
-              handleSwitchClick={(e) => {
-                console.log(e.target.checked);
-              }}
-              handleColorClick={(e, color) => {
-                console.log(e.target.checked);
-                console.log(color);
-              }}
-              handleOnMouseEnter={(e) => {
-                console.log("Mouse Enter..");
-              }}
-              handleInfoMarkFocus={(e) => {
-                console.log("On foucus..");
-              }}
-              handleInfoMarkBlur={(e) => {
-                console.log("on blur..");
-              }}
-            />
-          );
-        })}
-      </div>
-    );
+    type: "plastic bottles",
+    handleCheckboxClick: (e) => {
+      console.log(e.target);
+    },
+    handleSwitchClick: (e) => {
+      console.log(e.target);
+    },
+    handleColorClick: (e) => {
+      console.log(e.target);
+    },
+    handleOnMouseEnter: (e) => {
+      console.log(e.target);
+    },
+    handleInfoMarkFocus: (e) => {
+      console.log(e.target);
+    },
+    handleInfoMarkBlur: (e) => {
+      console.log(e.target);
+    },
   },
 };
