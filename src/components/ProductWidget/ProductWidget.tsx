@@ -71,6 +71,7 @@ export const ProductWidget = ({
             {availableColors.map((x) => {
               return (
                 <ColorRadioButton
+                  title={`Color ${x}`}
                   checked={x == selectedColor}
                   onChange={(e) => handleColorClick(e, x)}
                   key={x}
