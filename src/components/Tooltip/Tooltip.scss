@@ -1,4 +1,4 @@
-@import '../../shared/globalStyles.scss';
+@import "../../shared/globalStyles.scss";
 
 .tooltip {
   justify-content: space-around;
@@ -9,10 +9,10 @@
   border-radius: 0.25rem;
   padding: 1rem 0.5rem;
   text-align: center;
-  box-shadow: 0rem 2rem 10rem 1px rgba(0, 0, 0, 0.315);
+  box-shadow: 0.5rem 1rem 3rem 1px rgba(0, 0, 0, 0.315);
   background-color: white;
 
-  p{
+  p {
     font-size: 14px;
   }
   a {
