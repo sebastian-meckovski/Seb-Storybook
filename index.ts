@@ -6,6 +6,7 @@ export * from './src/components/ColorRadioButton/ColorRadioButton'
 export * from './src/components/ProductWidget/ProductWidget'
 export * from './src/components/Tooltip/ToolTip'
 export * from './src/components/LoadingSpinner/LoadingSpinner'
+export * from './src/components/ContentCard/ContentCard'
 
 // types
 export * from './src/shared/types'

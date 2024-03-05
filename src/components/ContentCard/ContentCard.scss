@@ -1,0 +1,16 @@
+.ContentCard{
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: 1rem;
+    margin: auto;
+    padding: 1rem;
+    border: 2px solid transparent;
+    transition: 0.4s ease-in-out;
+    width: 16rem;
+
+
+    &:hover{
+        border: 2px solid rgba(255, 255, 255, 0.30);
+        background-color: rgba(255, 255, 255, 0.20);
+        scale: 1.1;
+    }
+}
