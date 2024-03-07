@@ -1,7 +1,7 @@
 import React from "react";
 import "./LinkButton.scss";
 
-interface LinkButtonProps {
+interface LinkButtonProps extends React.HTMLProps<HTMLAnchorElement>  {
   children: JSX.Element | string;
 }
 

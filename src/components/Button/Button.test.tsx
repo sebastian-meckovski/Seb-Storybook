@@ -1,18 +1,18 @@
 import "@testing-library/jest-dom";
 import React from "react";
 import { render } from "@testing-library/react";
-import { LinkButton } from "./LinkButton";
+import { Button } from "./Button";
 
-describe("LinkButton", () => {
-  it("should link button with a some JSX content in it", () => {
-    const testId = "link button";
+describe("Button", () => {
+  it("should render button with a some JSX content in it", () => {
+    const testId = "test-button";
     const { getByTestId } = render(
-      <LinkButton data-testid={testId}>
+      <Button data-testid={testId}>
         <p>Test JSX Content here</p>
-      </LinkButton>
+      </Button>
     );
     expect(getByTestId(testId)).toBeInTheDocument();
-    expect(getByTestId(testId)).toBeInstanceOf(HTMLAnchorElement)
+    expect(getByTestId(testId)).toBeInstanceOf(HTMLButtonElement)
     expect(getByTestId(testId)).toContainHTML("<p>Test JSX Content here</p>");
   });
 });
