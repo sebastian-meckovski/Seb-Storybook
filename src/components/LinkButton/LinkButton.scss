@@ -11,6 +11,8 @@
     text-decoration: none;
 
     &:hover {
-        box-shadow: 0 0 2rem $accent-color;
+        @media (pointer: fine) {
+            box-shadow: 0 0 2rem $accent-color;
+        }
     }
 }

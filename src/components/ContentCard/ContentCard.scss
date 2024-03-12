@@ -1,4 +1,4 @@
-.ContentCard{
+.ContentCard {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -11,9 +11,11 @@
     width: 16rem;
 
 
-    &:hover{
-        border: 2px solid rgba(255, 255, 255, 0.30);
-        background-color: rgba(255, 255, 255, 0.20);
-        scale: 1.1;
+    &:hover {
+        @media (pointer: fine) {
+            border: 2px solid rgba(255, 255, 255, 0.30);
+            background-color: rgba(255, 255, 255, 0.20);
+            scale: 1.1;
+        }
     }
 }
