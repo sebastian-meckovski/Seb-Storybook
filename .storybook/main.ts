@@ -73,18 +73,24 @@ const config: StorybookConfig = {
         ],
       },
     },
+    "@storybook/addon-webpack5-compiler-swc",
+    "@chromatic-com/storybook"
   ],
+
   framework: {
     name: "@storybook/react-webpack5",
     options: {
-      builder: {
-        useSWC: true,
-      },
+      builder: {},
     },
   },
+
   docs: {
     autodocs: "tag",
-    defaultName: 'Documentation',
+    defaultName: 'Documentation'
   },
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 };
 export default config;

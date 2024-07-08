@@ -4,7 +4,11 @@ import "@storybook/addon-console";
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    docs: {
+      canvas: {
+        sourceState: 'shown'
+      }
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

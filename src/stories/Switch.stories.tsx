@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Switch } from "../components/Switch/Swtich";
 import React from "react";
+import { useArgs } from '@storybook/preview-api';
+
+// import { useArgs } from '@storybook/preview-api';
+// import React from "react";
 
 const meta: Meta<typeof Switch> = {
   component: Switch,
@@ -15,10 +19,21 @@ The Switch component is a simple toggle switch that behaves like an HTML Checkbo
 export const Example: Story = {
   args: {
     checked: true,
-    name: "testing",
-    title: "hi Im title",
-    onChange: (e) => {
-      console.log("changing:", e.target);
-    },
+    title: "checkbox title",
   },
+  render: function Render(args) {
+    const [{ checked }, updateArgs] = useArgs();
+
+    function onChange() {
+      updateArgs({ checked: !checked });
+    }
+
+    return (
+      <Switch
+        {...args}
+        onChange={onChange}
+        checked={checked}
+      />
+    )
+  }
 };
