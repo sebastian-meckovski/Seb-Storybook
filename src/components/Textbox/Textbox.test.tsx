@@ -7,7 +7,7 @@ describe("Textbox", () => {
   it("should render the Textbox", () => {
     const id = "my-Textbox";
     const value = 'this is test value'
-    const { getByTestId } = render(<Textbox data-testid={id} value={value}></Textbox>);
+    const { getByTestId } = render(<Textbox data-testid={id} value={value} onChange={() => {console.log('changed')}}></Textbox>);
     expect(getByTestId(id)).toBeInTheDocument();
     expect(getByTestId(id)).toHaveValue(value)
   });

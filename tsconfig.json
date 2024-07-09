@@ -36,7 +36,7 @@
     "module": "CommonJS"
   },
   "types": ["node", "jest", "@testing-library/jest-dom"],
-  "include": ["./**/*.ts", "src/components/Checkbox/CheckBox.test.tsx"],
+  "include": ["./**/*.ts", "src/components/Checkbox/CheckBox.test.tsx", "src/components/ComboBox/ComboBox.stories.tsx"],
   "exclude": [
     "node_modules/**/*", "webpack.config.ts", "src/stories/**/*"
   ],

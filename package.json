@@ -1,6 +1,6 @@
 {
   "name": "seb-components-library",
-  "version": "1.0.71",
+  "version": "1.0.74",
   "description": "Sebastian's personal component library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -67,6 +67,8 @@
     "url-loader": "^4.1.1"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "sass": "^1.71.1",
     "storybook-addon-sass-postcss": "^0.3.0",
     "webpack": "^5.90.3",
