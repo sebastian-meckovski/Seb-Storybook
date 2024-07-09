@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ComboBox } from "../components/ComboBox/ComboBox";
 import React from "react";
 import { useArgs } from '@storybook/preview-api';
+import { dummyData } from '../shared/DummyData/ComboBoxDummyData'
 
 
 const meta: Meta<typeof ComboBox> = {
@@ -10,19 +11,6 @@ const meta: Meta<typeof ComboBox> = {
 };
 export default meta;
 type Story = StoryObj<typeof ComboBox>;
-
-export const dummyData = [
-    { id: 1, name: 'Sunrise Symphony' },
-    { id: 2, name: 'Ocean Odyssey' },
-    { id: 3, name: 'Mountain Majesty' },
-    { id: 4, name: 'Forest Fantasy' },
-    { id: 5, name: 'Desert Dream' },
-    { id: 6, name: 'River Rhapsody' },
-    { id: 7, name: 'Prairie Poem' },
-    { id: 8, name: 'Rainbow Reverie' },
-    { id: 9, name: 'Starlight Sonata' },
-    { id: 10, name: 'Moonlight Melody' },
-];
 
 /**
 The ComboBox is a custom dropdown select component built with React and TypeScript. It allows users to select an item from a dropdown list, which can be filtered by typing into an input field.

@@ -1,13 +1,13 @@
 
-> seb-components-library@1.0.71 build-storybook
-> storybook build --output-dir C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--8932-CoDNf4ZTZ7r6 --webpack-stats-json C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--8932-CoDNf4ZTZ7r6
+> seb-components-library@1.0.74 build-storybook
+> storybook build --output-dir C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--22672-Oy1sylKB6Qle
 
 @storybook/cli v8.1.11
 
-info => Cleaning outputDir: ..\..\..\SEBAST~1\AppData\Local\Temp\chromatic--8932-CoDNf4ZTZ7r6
+info => Cleaning outputDir: ..\..\..\SEBAST~1\AppData\Local\Temp\chromatic--22672-Oy1sylKB6Qle
 info => Loading presets
 info => Building manager..
-info => Manager built (256 ms)
+info => Manager built (245 ms)
 info => Building preview..
 info Addon-docs: using MDX3
 info => Using implicit CSS loaders
@@ -16,7 +16,7 @@ info => [@storybook/addon-styling-webpack] Applying custom Storybook webpack con
 info => [@storybook/addon-styling-webpack] Replacing Storybook's webpack rules for styles with given rules.
 info => Using default Webpack5 setup
 WARN No story files found for the specified pattern: src\**\*.mdx
-info => Copying static files: public at ..\..\..\SEBAST~1\AppData\Local\Temp\chromatic--8932-CoDNf4ZTZ7r6
+info => Copying static files: public at ..\..\..\SEBAST~1\AppData\Local\Temp\chromatic--22672-Oy1sylKB6Qle
 info Using tsconfig paths for react-docgen
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
@@ -26,10 +26,9 @@ WARN   573.0fe45118.iframe.bundle.js (668 KiB)
 WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
 WARN Entrypoints:
 WARN   main (831 KiB)
-WARN       runtime~main.9f62ab87.iframe.bundle.js
+WARN       runtime~main.fd990ba1.iframe.bundle.js
 WARN       806.6904a135.iframe.bundle.js
-WARN       main.2ce6c1b3.iframe.bundle.js
+WARN       main.be80e1a1.iframe.bundle.js
 WARN 
-info => Preview built (10 s)
-info => preview stats written to C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--8932-CoDNf4ZTZ7r6\preview-stats.json
-info => Output directory: C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--8932-CoDNf4ZTZ7r6
+info => Preview built (12 s)
+info => Output directory: C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--22672-Oy1sylKB6Qle

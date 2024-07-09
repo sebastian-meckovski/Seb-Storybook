@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import React from "react";
 import { render } from "@testing-library/react";
 import { ComboBox } from "../ComboBox/ComboBox";
-import { dummyData } from "../../stories/ComboBox.stories";
+import { dummyData } from "../../shared/DummyData/ComboBoxDummyData";
 
 describe("ComboBox", () => {
     it("should render ComboBox with a list of items", () => {
