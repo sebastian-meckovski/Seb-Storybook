@@ -17,21 +17,20 @@ The ComboBox is a custom dropdown select component built with React and TypeScri
 */
 export const Example: Story = {
     args: {
-        listItemRender: (x) => { return (<p>{x.name}</p>) },
-        selectedValue: dummyData[2],
-        inputValue: '',
+        listItemRender: (x) => { return (<p style={{ margin: '0.5rem', fontSize: '0.9rem' }}>{x.name}</p>) },
         isLoading: false,
         EmptyResultMessage: 'no records found',
         placeholder: 'search items...',
-        buttonDropDownAriaKey: 'aria key here',
-        ariaKey: 'name'
+        buttonDropDownAriaKey: 'name',
+        ariaKey: 'name',
+        selectedValue: dummyData[3]
     },
 
     render: function Render(args) {
-        const [{ inputValue, dataSource }, updateArgs] = useArgs();
+        const [{ inputValue, dataSource, selectedValue }, updateArgs] = useArgs();
 
         function onItemClick(_e: any, x: any) {
-            updateArgs({ selectedValue: x });
+            x && updateArgs({ selectedValue: x, inputValue: x.name });
         }
 
         function onInputChange(e: any) {
@@ -42,17 +41,17 @@ export const Example: Story = {
         }
 
         function onDropdownClosed() {
-            console.log('closed')
-            updateArgs({ inputValue: '', dataSource: dummyData });
+            updateArgs({ dataSource: dummyData });
         }
 
         return (
             <ComboBox {...args}
-                onItemClick={(_e, x) => { onItemClick(_e, x) }}
+                onItemClick={(_e, x) => { x && onItemClick(_e, x) }}
                 onInputChange={onInputChange}
                 inputValue={inputValue}
                 onDropdownClosed={onDropdownClosed}
                 dataSource={dataSource}
+                selectedValue={selectedValue}
             />
         )
     }

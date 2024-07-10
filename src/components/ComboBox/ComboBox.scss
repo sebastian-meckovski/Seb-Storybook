@@ -1,6 +1,7 @@
 .comboBoxWrapper {
     margin: 1.25rem 0rem 0.25rem 0rem;
     &__comboBox {
+      border: 1px solid;
       height: 2rem;
       display: flex;
       align-items: center;

@@ -1,34 +1,32 @@
 
 > seb-components-library@1.0.74 build-storybook
-> storybook build --output-dir C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--22672-Oy1sylKB6Qle
+> storybook build --output-dir C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--9924-igUkJXLI0epE --webpack-stats-json C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--9924-igUkJXLI0epE
 
 @storybook/cli v8.1.11
 
-info => Cleaning outputDir: ..\..\..\SEBAST~1\AppData\Local\Temp\chromatic--22672-Oy1sylKB6Qle
+info => Cleaning outputDir: ..\..\..\SEBAST~1\AppData\Local\Temp\chromatic--9924-igUkJXLI0epE
 info => Loading presets
 info => Building manager..
-info => Manager built (245 ms)
+info => Manager built (196 ms)
 info => Building preview..
-info Addon-docs: using MDX3
 info => Using implicit CSS loaders
 info => [@storybook/addon-styling-webpack] Applying custom Storybook webpack configuration styling.
 info => [@storybook/addon-styling-webpack] Applying custom Storybook webpack configuration styling.
 info => [@storybook/addon-styling-webpack] Replacing Storybook's webpack rules for styles with given rules.
 info => Using default Webpack5 setup
 WARN No story files found for the specified pattern: src\**\*.mdx
-info => Copying static files: public at ..\..\..\SEBAST~1\AppData\Local\Temp\chromatic--22672-Oy1sylKB6Qle
-info Using tsconfig paths for react-docgen
+info => Copying static files: public at ..\..\..\SEBAST~1\AppData\Local\Temp\chromatic--9924-igUkJXLI0epE
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
 WARN Assets: 
-WARN   806.6904a135.iframe.bundle.js (813 KiB)
-WARN   573.0fe45118.iframe.bundle.js (668 KiB)
+WARN   2.d0a12cf8.iframe.bundle.js (986 KiB)
 WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
 WARN Entrypoints:
-WARN   main (831 KiB)
-WARN       runtime~main.fd990ba1.iframe.bundle.js
-WARN       806.6904a135.iframe.bundle.js
-WARN       main.be80e1a1.iframe.bundle.js
+WARN   main (253 KiB)
+WARN       runtime~main.3adb1c40.iframe.bundle.js
+WARN       294.0ff4113c.iframe.bundle.js
+WARN       main.974ed337.iframe.bundle.js
 WARN 
-info => Preview built (12 s)
-info => Output directory: C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--22672-Oy1sylKB6Qle
+info => Preview built (3.57 s)
+info => preview stats written to C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--9924-igUkJXLI0epE\preview-stats.json
+info => Output directory: C:\Users\SEBAST~1\AppData\Local\Temp\chromatic--9924-igUkJXLI0epE
