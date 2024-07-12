@@ -12,6 +12,7 @@ export * from "./src/components/Button/Button";
 export * from "./src/components/Textarea/Textarea";
 export * from "./src/components/Textbox/Textbox";
 export * from "./src/components/ComboBox/ComboBox";
+export * from "./src/components/ComboBox/ComboBoxAutoComplete";
 
 // types
 export * from "./src/shared/types";
