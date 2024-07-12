@@ -4,7 +4,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-interface ComboBoxAutoCompleteProps {
+interface ComboBoxAutoCompleteProps extends React.HTMLAttributes<HTMLDivElement> {
     /**An array of any type that represents the data source for the dropdown list.*/
     dataSource: any[];
     /** A function that takes an item from the dataSource and returns a JSX element that represents the item in the dropdown list. */
@@ -91,7 +91,6 @@ export function ComboBoxAutoComplete({
         let listitem: HTMLElement;
         if (DropdownRef.current) {
             listitem = DropdownRef.current.children[index] as HTMLElement;
-            listitem && listitem.scrollIntoView({ block: 'center' });
             if (startTabbing) {
                 listitem ? listitem.focus() : setIndex(0);
             }
@@ -117,6 +116,7 @@ export function ComboBoxAutoComplete({
     const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement> | React.KeyboardEvent<HTMLLIElement>, x?: any) => {
         switch (e.key) {
             case 'ArrowDown':
+                e.preventDefault();
                 setIndex((prev) => {
                     return dataSource && prev < dataSource.length - 1 ? prev + 1 : prev;
                 });
@@ -143,8 +143,8 @@ export function ComboBoxAutoComplete({
     };
 
     return (
-        <div className="comboBoxWrapper" ref={wrapperRef}>
-            <div ref={ComboBoxRef} className={`comboBoxWrapper__comboBox`} {...props}>
+        <div className="comboBoxWrapper" ref={wrapperRef}  {...props}>
+            <div ref={ComboBoxRef} className={`comboBoxWrapper__comboBox`}>
                 <input
                     onKeyDown={(e) => { onKeyDown(e) }}
                     ref={inputRef}
