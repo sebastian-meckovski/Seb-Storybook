@@ -41,10 +41,10 @@ jobs:
           sed -i "2i \ " CHANGELOG.md
       - name: Configure Git
         run: |
-          git pull
+          git status
           git config user.email "sebastian.meckovski@gmail.com"
           git config user.name "Sebastian Meckovski"
-          git remote set-url github-origin https://sebastian-meckovski:${{ secrets.AUTO_VERSION_TOKEN }}@github.com/sebastian-meckovski/Seb-Storybook.git
+          git remote add github-origin https://sebastian-meckovski:${{ secrets.AUTO_VERSION_TOKEN }}@github.com/sebastian-meckovski/Seb-Storybook.git
       - name: Commit and push changes
         run: |
           git add .
