@@ -41,6 +41,7 @@ jobs:
           sed -i "2i \ " CHANGELOG.md
       - name: Configure Git
         run: |
+          git config --global --add safe.directory '*'
           git status
           git config user.email "sebastian.meckovski@gmail.com"
           git config user.name "Sebastian Meckovski"
