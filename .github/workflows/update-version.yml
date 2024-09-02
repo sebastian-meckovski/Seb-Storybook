@@ -1,5 +1,5 @@
 name: Version Bump
-# test
+
 on:
   push:
     branches:
@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: |
-          yarn add webpack@5.89.0
+          npm i webpack@5.94.0
           apt-get update -qy
           apt-get install -y jq
       - name: Bump version
@@ -42,7 +42,6 @@ jobs:
       - name: Configure Git
         run: |
           git config --global --add safe.directory '*'
-          git status
           git config user.email "sebastian.meckovski@gmail.com"
           git config user.name "Sebastian Meckovski"
           git remote add github-origin https://sebastian-meckovski:${{ secrets.AUTO_VERSION_TOKEN }}@github.com/sebastian-meckovski/Seb-Storybook.git
@@ -54,5 +53,5 @@ jobs:
       - name: Publish to npm
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-          npm build
+          npm run build
           npm publish
