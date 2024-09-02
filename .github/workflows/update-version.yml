@@ -14,14 +14,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: List directory contents
-        run: ls -la
-      - name: Verify Git Directory
-        run: |
-          if [ ! -d ".git" ]; then
-            echo "Not a git directory"
-            exit 1
-          fi
       - name: Install dependencies
         run: |
           yarn add webpack@5.89.0
@@ -49,9 +41,9 @@ jobs:
           sed -i "2i \ " CHANGELOG.md
       - name: Configure Git
         run: |
-          git config --global user.email "sebastian.meckovski@gmail.com"
-          git config --global user.name "Sebastian Meckovski"
-          git remote set-url origin https://${{ secrets.AUTO_VERSION_TOKEN }}@github.com/sebastian-meckovski/Seb-Storybook.git
+          git config user.email "sebastian.meckovski@gmail.com"
+          git config user.name "Sebastian Meckovski"
+          git remote set-url origin https://sebastian-meckovski:${{ secrets.AUTO_VERSION_TOKEN }}@github.com/sebastian-meckovski/Seb-Storybook.git
       - name: Commit and push changes
         run: |
           git add .
