@@ -27,16 +27,10 @@ jobs:
           VAR_TIME=$(date '+%Y-%m-%d')
           API_RESPONSE=$(curl --request GET "https://api.github.com/repos/sebastian-meckovski/Seb-Storybook/pulls?state=closed" --header "PRIVATE-TOKEN: ${{ secrets.AUTO_VERSION_TOKEN }}")
           FIRST_MERGE_REQUEST=$(echo "$API_RESPONSE" | jq -r '.[0]')
-          DESCRIPTION=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.description')
-          AUTHOR=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.user.login')
-          TARGET_BRANCH=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.base.ref')
-          PR_URL=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.html_url')
-          TITLE=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.title')
-          sed -i "2i - Author: ${AUTHOR}" CHANGELOG.md
-          sed -i "2i - Pull request URL: ${PR_URL}" CHANGELOG.md
-          sed -i "2i - Target branch: ${TARGET_BRANCH}" CHANGELOG.md
+
+          DESCRIPTION=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.body')
           sed -i "2i - Description: ${DESCRIPTION}" CHANGELOG.md
-          sed -i "2i - Title: ${TITLE}" CHANGELOG.md
+
           sed -i "2i ## ${PACKAGE_VERSION} (${VAR_TIME})" CHANGELOG.md
           sed -i "2i \ " CHANGELOG.md
       - name: Configure Git
@@ -55,3 +49,14 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
           npm run build
           npm publish
+
+
+# AUTHOR=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.user.login')
+# TARGET_BRANCH=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.base.ref')
+# PR_URL=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.html_url')
+# TITLE=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.title')
+
+# sed -i "2i - Author: ${AUTHOR}" CHANGELOG.md
+# sed -i "2i - Pull request URL: ${PR_URL}" CHANGELOG.md
+# sed -i "2i - Target branch: ${TARGET_BRANCH}" CHANGELOG.md
+# sed -i "2i - Title: ${TITLE}" CHANGELOG.md
