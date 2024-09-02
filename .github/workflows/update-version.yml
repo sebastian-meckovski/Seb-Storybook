@@ -49,8 +49,8 @@ jobs:
           sed -i "2i \ " CHANGELOG.md
       - name: Configure Git
         run: |
-          git config user.email "sebastian.meckovski@gmail.com"
-          git config user.name "Sebastian Meckovski"
+          git config --global user.email "sebastian.meckovski@gmail.com"
+          git config --global user.name "Sebastian Meckovski"
           git remote set-url origin https://${{ secrets.AUTO_VERSION_TOKEN }}@github.com/sebastian-meckovski/Seb-Storybook.git
       - name: Commit and push changes
         run: |
