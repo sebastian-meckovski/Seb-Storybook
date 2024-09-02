@@ -14,8 +14,10 @@ run_tests:
     - npm test
 
 version_bump:
-  rules:
-    - if: github.event_name == 'push' && github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'AUTOMATIC VERSION BUMP')
+  on:
+    push:
+      branches:
+        - auto-deploy-test
   image: node:18-buster
   stage: version-bump
   before_script:
