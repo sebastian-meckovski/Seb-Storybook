@@ -1,14 +1,10 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
-
 jobs:
   run_tests:
+    on:
+      pull_request:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
     container:
       image: node:18-alpine3.17
     steps:
