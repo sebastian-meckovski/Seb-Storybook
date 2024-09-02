@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: List directory contents
+        run: ls -la
       - name: Verify Git Directory
         run: |
           if [ ! -d ".git" ]; then
