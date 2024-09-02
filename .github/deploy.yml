@@ -4,8 +4,7 @@ stages:
 
 run_tests:
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-  stage: test
+  if: github.event_name == 'push' && github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'AUTOMATIC VERSION BUMP')
   image: node:18-alpine3.17
   before_script:
     - yarn add jest@29.7.0
