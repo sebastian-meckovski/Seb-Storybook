@@ -1,0 +1,17 @@
+name: Run tests
+
+on:
+  pull_request:
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    container:
+      image: node:18-alpine3.17
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install Jest
+        run: npm i jest@29.7.0
+      - name: Run tests
+        run: npm test
