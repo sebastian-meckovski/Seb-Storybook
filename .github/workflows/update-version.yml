@@ -14,6 +14,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Verify Git Directory
+      run: |
+        if [ ! -d ".git" ]; then
+          echo "Not a git directory"
+          exit 1
+        fi
       - name: Install dependencies
         run: |
           yarn add webpack@5.89.0
