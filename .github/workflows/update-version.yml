@@ -34,12 +34,6 @@ jobs:
           PR_URL=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.html_url')
           TITLE=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.title')
           
-          echo "$FIRST_MERGE_REQUEST"
-          echo "$DESCRIPTION"
-          echo "$AUTHOR"
-          echo "$PR_URL"
-          echo "$TITLE"
-          
           # Add version, description, author, PR URL, and title to CHANGELOG.md
           sed -i "2i ## ${PACKAGE_VERSION} (${VAR_TIME})\n- Description: ${DESCRIPTION}\n- Author: ${AUTHOR}\n- Pull request URL: ${PR_URL}\n- Title: ${TITLE}\n" CHANGELOG.md
       - name: Configure Git
@@ -57,14 +51,3 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
           npm run build
           npm publish
-
-
-# AUTHOR=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.user.login')
-# TARGET_BRANCH=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.base.ref')
-# PR_URL=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.html_url')
-# TITLE=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.title')
-
-# sed -i "2i - Author: ${AUTHOR}" CHANGELOG.md
-# sed -i "2i - Pull request URL: ${PR_URL}" CHANGELOG.md
-# sed -i "2i - Target branch: ${TARGET_BRANCH}" CHANGELOG.md
-# sed -i "2i - Title: ${TITLE}" CHANGELOG.md
