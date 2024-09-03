@@ -28,13 +28,9 @@ jobs:
           VAR_TIME=$(date '+%Y-%m-%d')
           API_RESPONSE=$(curl --request GET "https://api.github.com/repos/sebastian-meckovski/Seb-Storybook/pulls?state=closed" --header "PRIVATE-TOKEN: ${{ secrets.AUTO_VERSION_TOKEN }}")
           FIRST_MERGE_REQUEST=$(echo "$API_RESPONSE" | jq -r '.[0]')
-
           DESCRIPTION=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.body')
-          echo $FIRST_MERGE_REQUEST
-          echo $DESCRIPTION
-          sed -i 2i - Description: ${DESCRIPTION} CHANGELOG.md
-          sed -i 2i ## ${PACKAGE_VERSION} (${VAR_TIME}) CHANGELOG.md
-          sed -i 2i \  CHANGELOG.md
+          echo "$DESCRIPTION"
+          sed -i "2i ## ${PACKAGE_VERSION} (${VAR_TIME})\n- Description: ${DESCRIPTION}\n" CHANGELOG.md
           git status
       - name: Configure Git
         run: |
