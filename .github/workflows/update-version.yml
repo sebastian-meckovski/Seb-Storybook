@@ -32,9 +32,9 @@ jobs:
           DESCRIPTION=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.body')
           echo $FIRST_MERGE_REQUEST
           echo $DESCRIPTION
-          sed -i "2i - Description: ${DESCRIPTION}" CHANGELOG.md
-          sed -i "2i ## ${PACKAGE_VERSION} (${VAR_TIME})" CHANGELOG.md
-          sed -i "2i \ " CHANGELOG.md
+          sed -i 2i - Description: ${DESCRIPTION} CHANGELOG.md
+          sed -i 2i ## ${PACKAGE_VERSION} (${VAR_TIME}) CHANGELOG.md
+          sed -i 2i \  CHANGELOG.md
           git status
       - name: Configure Git
         run: |
