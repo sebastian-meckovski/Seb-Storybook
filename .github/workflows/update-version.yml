@@ -21,6 +21,7 @@ jobs:
           apt-get install -y jq
       - name: Bump version
         run: |
+          git config --global --add safe.directory '*'
           npm version patch --git-tag-version false
           PACKAGE_JSON_FILE=$(cat package.json)
           PACKAGE_VERSION=$(echo "$PACKAGE_JSON_FILE" | jq -r '.version')
@@ -37,7 +38,6 @@ jobs:
           git status
       - name: Configure Git
         run: |
-          git config --global --add safe.directory '*'
           git config user.email "sebastian.meckovski@gmail.com"
           git config user.name "Sebastian Meckovski"
           git remote add github-origin https://sebastian-meckovski:${{ secrets.AUTO_VERSION_TOKEN }}@github.com/sebastian-meckovski/Seb-Storybook.git
