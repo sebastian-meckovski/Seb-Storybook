@@ -28,20 +28,15 @@ jobs:
           VAR_TIME=$(date '+%Y-%m-%d')
           API_RESPONSE=$(curl --request GET "https://api.github.com/repos/sebastian-meckovski/Seb-Storybook/pulls?state=closed" --header "PRIVATE-TOKEN: ${{ secrets.AUTO_VERSION_TOKEN }}")
           FIRST_MERGE_REQUEST=$(echo "$API_RESPONSE" | jq -r '.[0]')
-          
           DESCRIPTION=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.body')
           AUTHOR=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.user.login')
           PR_URL=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.html_url')
           TITLE=$(echo "$FIRST_MERGE_REQUEST" | jq -r '.title')
-          
-          echo "$FIRST_MERGE_REQUEST"
           echo "$DESCRIPTION"
           echo "$AUTHOR"
           echo "$PR_URL"
           echo "$TITLE"
-          
           sed -i "2i ## ${PACKAGE_VERSION} (${VAR_TIME})\n- Description: ${DESCRIPTION}\n- Author: ${AUTHOR}\n- Pull request URL: ${PR_URL}\n- Title: ${TITLE}\n" CHANGELOG.md
-
           git status
       - name: Configure Git
         run: |
