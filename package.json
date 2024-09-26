@@ -67,8 +67,6 @@
     "url-loader": "^4.1.1"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
     "sass": "^1.71.1",
     "storybook-addon-sass-postcss": "^0.3.0",
     "webpack": "^5.94.0",

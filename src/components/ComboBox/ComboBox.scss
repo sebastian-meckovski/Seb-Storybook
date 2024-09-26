@@ -25,11 +25,17 @@
         background-color: transparent;
         margin-left: auto;
         cursor: pointer;
+        &__icon {
+          width: 70%;
+          height: 70%;
+        }
         &__spinner {
           animation-name: spin;
           animation-duration: 1500ms;
           animation-iteration-count: infinite;
           animation-timing-function: linear;
+          width: 70%;
+          height: 70%;
         }
       }
     }

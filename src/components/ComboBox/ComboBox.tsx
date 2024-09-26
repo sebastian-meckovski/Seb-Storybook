@@ -1,8 +1,6 @@
-import { useRef, useState, useLayoutEffect, useEffect, ReactNode } from 'react';
+import React, { useRef, useState, useLayoutEffect, useEffect, ReactNode } from 'react';
 import './ComboBox.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faAngleUp, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
+import {FaAngleDown, FaAngleUp, FaSpinner} from '../../SVG/Icons/FontAwesomeIcons'
 
 interface ComboBoxProps {
     /**An array of any type that represents the data source for the dropdown list.*/
@@ -174,7 +172,13 @@ export function ComboBox({
                         setIsOpen((prev) => !prev);
                     }}
                 >
-                    {!isLoading ? <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} /> : <FontAwesomeIcon className="comboBoxWrapper__comboBox__comboButton__spinner" icon={faSpinner} />}
+                    {!isLoading ?
+                     isOpen ? (
+                        <FaAngleUp className="comboBoxWrapper__comboBox__comboButton__icon" />
+                      ) : (
+                        <FaAngleDown className="comboBoxWrapper__comboBox__comboButton__icon" />
+                      )
+                    : <FaSpinner className="comboBoxWrapper__comboBox__comboButton__spinner"/>}
                 </button>
             </div>
             {isOpen && (
