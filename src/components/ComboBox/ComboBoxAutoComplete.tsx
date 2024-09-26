@@ -1,8 +1,7 @@
 import { useRef, useState, useLayoutEffect, useEffect, ReactNode } from 'react';
 import './ComboBox.scss';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {FaSpinner} from '../../SVG/Icons/FontAwesomeIcons'
 
 interface ComboBoxAutoCompleteProps extends React.HTMLAttributes<HTMLDivElement> {
     /**An array of any type that represents the data source for the dropdown list.*/
@@ -166,7 +165,7 @@ export function ComboBoxAutoComplete({
                 <div
                     className="comboBoxWrapper__comboBox__comboButton"
                 >
-                    {isLoading && <FontAwesomeIcon className="comboBoxWrapper__comboBox__comboButton__spinner" icon={faSpinner} />}
+                    {isLoading && <FaSpinner className="comboBoxWrapper__comboBox__comboButton__spinner"/>}
                 </div>
             </div>
             {dataSource?.length > 0 && isOpen && (
