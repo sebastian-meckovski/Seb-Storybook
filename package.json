@@ -1,6 +1,6 @@
 {
   "name": "seb-components-library",
-  "version": "1.0.91",
+  "version": "1.0.92",
   "description": "Sebastian's personal component library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -1,4 +1,10 @@
 # CHANGELOG
+## 1.0.92 (2025-04-11)
+- Description: Updated ComboBoxAutoComplete component story to include example with API call
+- Author: sebastian-meckovski
+- Pull request URL: https://github.com/sebastian-meckovski/Seb-Storybook/pull/11
+- Title: ComboBoxAutoComplete story update
+
 ## 1.0.91 (2024-12-08)
 - Description: Updated ComboBoxAutoComplete component story to include example with API call
 - Author: sebastian-meckovski
